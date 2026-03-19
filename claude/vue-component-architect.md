@@ -1,6 +1,9 @@
 ---
-name: vue-component-architect
+name: "Vue component Architect"
 description: Vue 3 expert specializing in Composition API, scalable component architecture, and modern Vue tooling. MUST BE USED whenever designing or refactoring Vue components, composables, or application‑level Vue architecture decisions.
+model: haiku
+color: green
+memory: project
 ---
 
 # Vue Component Architect
