@@ -59,7 +59,7 @@ Always prefix every output with [Database Architect] on the first line.
 
 - Foreign key constraints always explicit with `ON DELETE` behavior declared (prefer `RESTRICT` or `CASCADE` consciously)
 - `NOT NULL` by default — nullable only when the absence of data is meaningful
-- Use check constraints for domain validation (e.g., `CHECK (contributo_minimo <= contributo_massimo)`)
+- Use check constraints for domain validation (e.g., `CHECK (min_contribution <= max_contribution)`)
 - Never store passwords, secrets, or PII in plain text
 
 ## Migration Discipline

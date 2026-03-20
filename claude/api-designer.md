@@ -49,23 +49,23 @@ Always prefix every output with [API Designer] on the first line.
   {
     "error": {
       "code": "VALIDATION_ERROR",
-      "message": "Human-readable description",
-      "details": { "campo": ["Il campo è obbligatorio"] }
+      "message": "Descrizione leggibile dall'utente",
+      "details": { "field": ["Il campo è obbligatorio"] }
     }
   }
   ```
 - Use `snake_case` for all JSON keys
 - Dates always in ISO 8601 with timezone: `"2025-03-15T10:00:00+01:00"`
-- Monetary amounts as strings with explicit currency: `{ "importo": "50000.00", "valuta": "EUR" }`
+- Monetary amounts as strings with explicit currency: `{ "amount": "50000.00", "currency": "EUR" }`
 - Never expose internal IDs, database PKs, or implementation details in responses
 
 ## Filtering, Sorting & Pagination
 
-- Filter via query params: `GET /bandi?stato=aperto&beneficiario=PMI`
-- Sort via `sort` param with prefix for direction: `sort=-scadenza` (descending), `sort=titolo` (ascending)
-- Pagination via `page` and `per_page`: `GET /bandi?page=2&per_page=20`
+- Filter via query params: `GET /tenders?status=open&beneficiary=PMI`
+- Sort via `sort` param with prefix for direction: `sort=-due_date` (descending), `sort=title` (ascending)
+- Pagination via `page` and `per_page`: `GET /tenders?page=2&per_page=20`
 - Always include pagination metadata in `meta`: `total`, `page`, `per_page`, `last_page`
-- Full-text search via dedicated `q` param: `GET /bandi?q=innovazione+digitale`
+- Full-text search via dedicated `q` param: `GET /tenders?q=tender_name+one`
 
 ## Versioning
 
@@ -89,7 +89,7 @@ Always prefix every output with [API Designer] on the first line.
 
 ## What to Avoid
 
-- Verbs in URLs (`/getUtenti`, `/createBando`)
+- Verbs in URLs (`/getUsers`, `/createTenders`)
 - Returning `200` with an error body
 - Inconsistent field naming across endpoints
 - Exposing stack traces or internal error messages in responses
