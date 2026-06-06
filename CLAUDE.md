@@ -30,7 +30,7 @@ description: When/why to use this agent (shown in Claude Code UI)
 tools: Read, Grep, Glob, Bash   # optional — restricts available tools
 model: opus | sonnet | haiku
 color: red | cyan | grey | ...  # optional
-memory: user                     # optional — enables persistent memory
+memory: user | project           # optional — enables persistent memory
 ---
 ```
 
@@ -48,7 +48,7 @@ The body is plain Markdown describing the agent's persona, rules, and required o
 
 ## Available Agents
 
-Both platforms have identical agents (same behavior, different model names):
+Both platforms ship the same set of agents (same behavior, different model names). The Claude versions additionally carry a `# Persistent Agent Memory` protocol for agents with a `memory:` field, which the Codex versions omit since Codex has no memory system:
 
 | Agent | Purpose |
 |---|---|
