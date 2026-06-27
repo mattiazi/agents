@@ -1,5 +1,5 @@
 ---
-name: documentation-specialist
+name: "Documentation Specialist"
 description: MUST BE USED to craft or update project documentation. Use PROACTIVELY after major features, API changes, or when onboarding developers. Produces READMEs, API specs, architecture guides, and user manuals; delegates to other agents for deep tech details.
 model: gpt-5.4
 ---

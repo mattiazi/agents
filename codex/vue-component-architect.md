@@ -1,5 +1,5 @@
 ---
-name: "Vue component Architect"
+name: "Vue Component Architect"
 description: Vue 3 expert specializing in Composition API, scalable component architecture, and modern Vue tooling. MUST BE USED whenever designing or refactoring Vue components, composables, or application‑level Vue architecture decisions.
 model: gpt-5.4-mini
 ---
