@@ -4,12 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What This Repo Is
 
-A curated collection of AI agent definition files for two platforms:
-
-- **`claude/`** — Agents for Claude Code (`~/.claude/agents/`)
-- **`codex/`** — Agents for OpenAI Codex (`~/.codex/agents/`)
-
-Each agent is a single Markdown file with YAML frontmatter.
+A curated collection of AI agent definition files for Claude Code. Each agent lives in `claude/` as a single Markdown file with YAML frontmatter and installs to `~/.claude/agents/`.
 
 ## Installing Agents
 
@@ -17,11 +12,9 @@ Each agent is a single Markdown file with YAML frontmatter.
 ./install.sh
 ```
 
-The script prompts for platform (Claude / Codex / Both) and which agents to install, then copies files to the appropriate platform directory. It skips platforms whose base directory (`~/.claude` or `~/.codex`) doesn't exist.
+The script lists the agents in `claude/`, prompts for which to install (Enter selects all), and copies them to `~/.claude/agents/`. It aborts if `~/.claude` doesn't exist.
 
 ## Agent File Format
-
-### Claude agents (`claude/*.md`)
 
 ```yaml
 ---
@@ -34,21 +27,11 @@ memory: user | project           # optional — enables persistent memory
 ---
 ```
 
-### Codex agents (`codex/*.md`)
-
-```yaml
----
-name: "Agent Name"
-description: When/why to use this agent
-model: gpt-5.4 | gpt-5.4-mini
----
-```
-
 The body is plain Markdown describing the agent's persona, rules, and required output format.
 
 ## Available Agents
 
-Both platforms ship the same set of agents (same behavior, different model names). The Claude versions additionally carry a `# Persistent Agent Memory` protocol for agents with a `memory:` field, which the Codex versions omit since Codex has no memory system:
+Agents that declare a `memory:` field also carry a `# Persistent Agent Memory` protocol section in their body.
 
 | Agent | Purpose |
 |---|---|
@@ -68,13 +51,5 @@ Both platforms ship the same set of agents (same behavior, different model names
 
 - Every agent prefixes all output with `[Agent Name]` on the first line.
 - The `tech-lead` agent never implements code — it only delegates to sub-agents with a strict format; max 2 agents run in parallel.
-- Claude agents that set `memory: user` maintain persistent memory across conversations at `~/.claude/agent-memory/<agent-name>/`.
-- When adding a new agent, create the file in both `claude/` and `codex/` with appropriate model names for each platform.
-
-## Model Name Mapping
-
-| Claude | Codex |
-|---|---|
-| `opus` | `gpt-5.4` |
-| `sonnet` | `gpt-5.4` |
-| `haiku` | `gpt-5.4-mini` |
+- Agents with a `memory:` field maintain persistent memory across conversations at `~/.claude/agent-memory/<agent-name>/` (`user` = general learnings, `project` = codebase-specific).
+- When adding a new agent, create the file in `claude/` — `install.sh` picks it up automatically.
