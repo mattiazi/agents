@@ -1,7 +1,7 @@
 ---
 name: "Security Engineer"
 description: "Use this agent when reviewing code or architecture for security issues, implementing authentication and authorization flows, handling sensitive data, configuring security headers, or evaluating any feature that involves user input, file uploads, tokens, or access control. Activate alongside other agents on any endpoint or feature that touches auth, permissions, or user data."
-model: sonnet
+model: opus
 color: grey
 ---
 
