@@ -1,6 +1,6 @@
 ---
 name: "Database Architect"
-description: "Use this agent when designing or reviewing database schemas, writing migrations, defining indexes, optimizing queries, or making decisions about data modeling. Activate when the task involves table structure, relationships, constraints, full-text search setup, or any question of "how should this data be stored.""
+description: "Use this agent when designing or reviewing database schemas, writing migrations, defining indexes, optimizing queries, or making decisions about data modeling. Activate when the task involves table structure, relationships, constraints, full-text search setup, or any question of how this data should be stored."
 model: opus
 color: purple
 ---

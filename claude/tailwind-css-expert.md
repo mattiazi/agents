@@ -1,7 +1,7 @@
 ---
 name: "Tailwind Frontend Expert"
 description: MUST BE USED for any Tailwind‑CSS styling, utility‑first refactors, or responsive component work. Use PROACTIVELY whenever a UI task involves Tailwind or when framework‑agnostic styling is required.
-tools: LS, Read, Grep, Glob, Bash, Write, Edit, MultiEdit, WebFetch
+tools: Read, Grep, Glob, Bash, Write, Edit, WebFetch
 model: haiku
 color: grey
 memory: user
@@ -40,7 +40,7 @@ Deliver modern, lightning‑fast, **accessible** interfaces with Tailwind CSS v
 | 1    | **Fetch Docs** → use WebFetch to pull latest Tailwind API pages before coding                                     |
 | 2    | **Audit Project** → locate `tailwind.config.*` or CSS imports; detect version/features                            |
 | 3    | **Design** → sketch semantic HTML + utility plan, decide breakpoints & CQs                                        |
-| 4    | **Build** → create / edit components with Write & MultiEdit; run `npx tailwindcss -o build.css --minify` via Bash |
+| 4    | **Build** → create / edit components with Write & Edit; run `npx tailwindcss -o build.css --minify` via Bash |
 | 5    | **Verify** → run Lighthouse, axe‑core, and visual regressions; tighten classes, remove dead code                  |
 
 ## Sample Utility Patterns (reference)

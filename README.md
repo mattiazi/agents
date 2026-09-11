@@ -1,6 +1,6 @@
 # agents
 
-A curated collection of AI agent definitions for **Claude Code** and **OpenAI Codex**. Drop them into your AI assistant's agents directory to get a team of specialized sub-agents that collaborate on complex development tasks.
+A curated collection of AI agent definitions for **Claude Code**. Drop them into `~/.claude/agents/` to get a team of specialized sub-agents that collaborate on complex development tasks.
 
 ## Installation
 
@@ -8,14 +8,7 @@ A curated collection of AI agent definitions for **Claude Code** and **OpenAI Co
 ./install.sh
 ```
 
-The installer prompts you to choose a platform (Claude, Codex, or both) and which agents to install, then copies the files to the correct directory:
-
-| Platform | Destination |
-|---|---|
-| Claude Code | `~/.claude/agents/` |
-| OpenAI Codex | `~/.codex/agents/` |
-
-> The installer skips a platform if its base directory (`~/.claude` or `~/.codex`) doesn't exist.
+The installer lists the available agents, lets you pick which ones you want (Enter installs all), and copies them to `~/.claude/agents/`. It aborts if `~/.claude` doesn't exist.
 
 ## Agents
 
@@ -74,13 +67,11 @@ Each agent prefixes all output with `[Agent Name]` so you can always tell which 
 
 ## Adding a New Agent
 
-1. Create `claude/<agent-name>.md` with Claude-compatible frontmatter.
-2. Create `codex/<agent-name>.md` with Codex-compatible frontmatter (different model names).
-3. Run `./install.sh` to deploy.
+1. Create `claude/<agent-name>.md` with the frontmatter below.
+2. Run `./install.sh` to deploy.
 
 ### Frontmatter reference
 
-**Claude** (`claude/*.md`):
 ```yaml
 ---
 name: "Agent Name"
@@ -91,20 +82,3 @@ color: red | cyan | grey | ...  # optional
 memory: user | project          # optional
 ---
 ```
-
-**Codex** (`codex/*.md`):
-```yaml
----
-name: "Agent Name"
-description: When and why to invoke this agent
-model: gpt-5.4 | gpt-5.4-mini
----
-```
-
-### Model name equivalents
-
-| Claude | Codex |
-|---|---|
-| `opus` | `gpt-5.4` |
-| `sonnet` | `gpt-5.4` |
-| `haiku` | `gpt-5.4-mini` |
